@@ -1,0 +1,21 @@
+<mat-accordion>
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+      <div matBadge ="4" matBadgeSize="small" matBadgeOverlap="false" matBadgeColor="accent">
+        Mccat Chat
+      </div>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    @for(message of messages(); track message.id){
+      <div class="container" [ngClass]="{
+        '.sender': message.userID === myId(),
+        '.receiver': message.userID !== myId()}">
+        {{message.text}}
+    </div>
+}
+
+
+  </mat-expansion-panel>
+</mat-accordion>

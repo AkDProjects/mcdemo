@@ -1,0 +1,4 @@
+<div class="box small">
+  <app-form *ngIf="overlayService.getOverlayState() | async"></app-form>
+  <button mat-button class (click)="closeOverlay()">X</button>
+</div>

@@ -1,0 +1,28 @@
+<div class="box large">
+  <div>
+    <button mat-button class (click)="hideOverlay()">close</button>
+
+    <form class="report_form" [formGroup]="reportForm">
+      <label for="report_number">Report Number</label><br>
+      @if(reportForm.get('r_number')?.errors?.['required'] && reportForm.get('r_number')?.touched){
+      <div class="warn-text"><p>Report Number is required</p></div>}
+      <input type="text" id="report_number" name="r_number" formControlName="r_number"><br>
+
+      <!-- TODO: make warn text smaller -->
+      <div class="warn-text"><p>format:(R1C-0123-15)</p></div>
+      <label for="report_date">Report Date</label><br>
+      <input type="date" id="report_date" name="r_date" formControlName="r_date"><br>
+
+      <label for="report_time">Report Time</label><br>
+      <input type="text" id="report_time" name="r_time" formControlName="r_time"><br>
+      <div class="warn-text"><p>format:(R1C-0123-15)</p></div>
+
+      <label for="spk1_name">Speaker 1</label><br>
+      <input type="text" id="spk1_name" name="s1_name" formControlName="s1_name"><br>
+
+
+        <button type="submit" [disabled]="!reportForm.valid" value="Submit" (click)="onSubmit()">Submit</button>
+</form>
+  </div>
+</div>
+

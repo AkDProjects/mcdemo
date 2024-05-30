@@ -1,0 +1,21 @@
+.box {
+  padding:20px;
+  border:1px solid #000;
+  position:static;
+ display:grid;
+  place-items: center;
+}
+.small {
+  width:200px;
+  height:200px;
+}
+
+.medium {
+  width:500px;
+  height:350px;
+}
+
+.large {
+  width:600px;
+  height:500px;
+}
